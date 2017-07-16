@@ -1,0 +1,41 @@
+<h2> My Angular 2 Counter</h2>
+
+<div class="b-box">
+
+  
+  <div class="b-counter">
+    <div class="b-counter__box" [ngClass]="autoIncrementClass">
+      {{configCurrentValue}}
+    </div>
+    <div class="b-counter__controls">
+      <div class="b-counter__button -type_rounded" (click)="decrement()">-</div>
+      <div class="b-counter__button -type_rounded" (click)="increment()">+</div>
+    </div>
+  </div>
+
+  <div class="b-counter__sidebar">
+
+    <div class="b-counter__step">
+      <input class="b-counter__input" type="text" value="{{configCounterStep}}" readonly>
+      <div class="b-counter__stepControls">
+        <div class="b-counter__button -type_step" (click)="decrementStep()">-</div>
+        <div class="b-counter__button -type_setStep" (click)="setCounterStep()">Set Counter Step</div>
+        <div class="b-counter__button -type_step" (click)="incrementStep()">+</div>
+      </div>
+    </div>
+
+    <div class="b-counter__controls -type_side">
+      <div class="b-counter__button" (click)="playPauseMethod()" [ngClass]="playPauseClass">{{playPause}}</div>
+      <div class="b-counter__button -state_stop" (click)="clear()">Stop</div>
+    </div>
+  </div>
+</div>
+
+
+<div class="b-log">
+  <ul class="b-log__list">
+    <li class="b-log__item" *ngFor="let log of logs">
+      {{ log }}
+    </li>
+  </ul>
+</div>
