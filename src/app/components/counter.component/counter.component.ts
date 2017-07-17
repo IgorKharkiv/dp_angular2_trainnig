@@ -13,8 +13,8 @@ export class CounterComponent {
   //config 
   public configCurrentValue:number = 0;
   public configCounterStep:number = 1;
-  public configTimeout:number = 20000;
-  public configInterval:number = 20000;
+  public configTimeout:number = 3000;
+  public configInterval:number = 3000;
 
   //couner step
   public counterStep:number = this.configCounterStep; 

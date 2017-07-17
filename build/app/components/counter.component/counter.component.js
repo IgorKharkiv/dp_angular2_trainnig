@@ -16,8 +16,8 @@ var CounterComponent = (function () {
         //config 
         this.configCurrentValue = 0;
         this.configCounterStep = 1;
-        this.configTimeout = 20000;
-        this.configInterval = 20000;
+        this.configTimeout = 3000;
+        this.configInterval = 3000;
         //couner step
         this.counterStep = this.configCounterStep;
         //state properties
