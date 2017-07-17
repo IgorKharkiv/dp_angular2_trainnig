@@ -13,20 +13,20 @@ var core_1 = require("@angular/core");
 var common_1 = require("@angular/common");
 var CounterComponent = (function () {
     function CounterComponent() {
-        //config 
+        // config
         this.configCurrentValue = 0;
         this.configCounterStep = 1;
-        this.configTimeout = 3000;
-        this.configInterval = 3000;
-        //couner step
+        this.configTimeout = 20000;
+        this.configInterval = 20000;
+        // couner step
         this.counterStep = this.configCounterStep;
-        //state properties
+        // state properties
         this.isStopped = false;
-        //classes modoficators
+        // classes modoficators
         this.autoIncrementClass = '';
         this.playPause = this.isStopped ? 'Play' : 'Pause';
         this.playPauseClass = '-state_play';
-        //array of logs
+        // array of logs
         this.logs = [];
         this.counterTimeOut();
     }
@@ -68,7 +68,7 @@ var CounterComponent = (function () {
     // auto increment delay timeOut
     CounterComponent.prototype.counterTimeOut = function () {
         var _this = this;
-        this.couterTimeOutId = setTimeout(function () {
+        this.couterTimeOutId = window.setTimeout(function () {
             _this.autoIncrement();
         }, this.configTimeout);
     };
@@ -76,7 +76,7 @@ var CounterComponent = (function () {
     CounterComponent.prototype.autoIncrement = function () {
         var _this = this;
         this.killInterval(this.couterTimeOutId);
-        this.couterIntervalId = setInterval(function () {
+        this.couterIntervalId = window.setInterval(function () {
             _this.increment(true);
         }, this.configInterval);
     };
@@ -89,8 +89,8 @@ var CounterComponent = (function () {
         }
         else {
             for (var _i = 0, intervals_1 = intervals; _i < intervals_1.length; _i++) {
-                var id_1 = intervals_1[_i];
-                clearInterval(id_1);
+                var intervalId = intervals_1[_i];
+                clearInterval(intervalId);
             }
         }
     };
@@ -124,7 +124,6 @@ var CounterComponent = (function () {
     CounterComponent.prototype.log = function (msg) {
         var now = Date.now();
         var date = new common_1.DatePipe('en-US').transform(now, 'dd/MM/yyyy hh:mm:ss');
-        ;
         this.logs.unshift(date + ' ' + msg);
     };
     return CounterComponent;

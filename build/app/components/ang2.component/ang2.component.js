@@ -27,8 +27,8 @@ var AngComponent = (function () {
 AngComponent = __decorate([
     core_1.Component({
         selector: 'ang',
-        template: "\n    <h1>{{message}}</h1>\n    <h2 [class]=\"className\">Azazazaz</h2>\n    <button (click)=\"changeColor()\">Change Color</button>    \n    <button (click)=\"setMessage()\" [disabled]=\"isDisabled\">Set Message</button>\n    <input type=\"text\" [(ngModel)]=\"message\" [disabled]=\"isDisabled\" />\n    <input type=\"checkbox\" [(ngModel)]=\"isDisabled\" />\n    <tr><td [attr.colspan]=\"1+1\">One-Two</td></tr>\n  ",
-        styles: ["\n    .red {color:red}\n    .green {color:green}\n  "]
+        templateUrl: './ang2.component.html',
+        styles: ["\n    .red {color:blue}\n    .green {color:green}\n  "]
     })
 ], AngComponent);
 exports.AngComponent = AngComponent;
