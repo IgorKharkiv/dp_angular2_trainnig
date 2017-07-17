@@ -14,7 +14,7 @@ describe('AngularJS to Angular Quick Reference Tests', function () {
 
   it('should display proper movie data', function () {
     // We check only a few samples
-    let expectedSamples: any[] = [
+    let expectedSamples: {}[] = [
       {row: 0, column: 0, element: 'img', attr: 'src', value: 'images/hero.png', contains: true},
       {row: 0, column: 2, value: 'Celeritas'},
       {row: 1, column: 3, matches: /Dec 1[678], 2015/}, // absorb timezone dif; we care about date format
